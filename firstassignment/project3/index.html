@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<title>First Assignment</title>
+		<!-- <script src="script.js"></script> -->
+	</head>
+	<body>
+		<h1>First Assignment</h1>
+		<form id="myForm">
+			Date of Birth: <input type="text" id="day" maxlength="2" size="1" placeholder="dd">
+			<input type="text" id="month" maxlength="2" size="1" placeholder="mm">
+			<input type="text" id="year" maxlength="4" size="2" placeholder="yyyy"><br/>
+			City: <input type="text" id="City"><br/>
+			State: <input type="text" id="State" maxlength="2" size="2"><br/>
+			Zip: <input type="number" id="zip" maxlength="5" size="5"><br/>
+			Hobby: <input type="text" id="hobby"><br/>
+			
+			<input type="button" onclick="resetFunc()" value="Reset"> 
+			<input type="button" onclick="submitInfo()" value="Submit">
+		</form>
+		<script>
+			var name = prompt( "Enter your name?");
+			
+			function resetFunc() {
+				document.getElementById("myForm").reset();
+			}
+
+			function submitInfo() {
+
+				var d = document.getElementById('day').value;
+				var m = document.getElementById('month').value;
+				var y = document.getElementById('year').value;
+				var c = document.getElementById('City').value;
+				var s = document.getElementById('State').value;
+				var z = document.getElementById('zip').value;
+				var h = document.getElementById('hobby').value;
+				var zodiac;
+				
+				if (m == 3 && d >= 21 || m == 4 && d <= 19){
+					zodiac = "Aries";
+
+				} else if (m == 4 && d >= 20 || m == 5 && d <= 20) {
+					zodiac = "Taurus";
+				} else if (m == 5 && d >= 21 || m == 6 && d <= 20) {
+					zodiac = "Gemini";
+				} else if (m == 6 && d >= 21 || m == 7 && d <= 22) {
+					zodiac = "Cancer";
+				} else if (m == 7 && d >= 23 || m == 8 && d <= 22) {
+					zodiac = "Leo";
+				} else if (m == 8 && d >= 23 || m == 9 && d <= 22) {
+					zodiac = "Virgo";
+				} else if (m == 9 && d >= 23 || m == 10 && d <= 22) {
+					zodiac = "Libra";
+				} else if (m == 10 && d >= 23 || m == 11 && d <= 21) {
+					zodiac = "Scorpio";
+				} else if (m == 11 && d >= 22 || m == 12 && d <= 21) {
+					zodiac = "Sagittarius";
+				} else if (m == 12 && d >= 22 || m == 1 && d <= 19) {
+					zodiac = "Capricorn";
+				} else if (m == 1 && d >= 20 || m == 2 && d <= 18) {
+					zodiac = "Aquarius";
+				} else if (m == 2 && d >= 19 || m == 3 && d <= 20) {
+					zodiac = "Pisces";
+				}
+
+
+
+				alert("Name : " + name + "\nDate of Birth : " + d + "/" + m + "/" + y
+						+ "\nCity : " + c + "\nState : " + s + "\n Zip Code : " + z +
+						"\n Hobby : " + h + "\nZodiac : " + zodiac
+				);
+			}
+		</script>
+	</body>
+</html>
