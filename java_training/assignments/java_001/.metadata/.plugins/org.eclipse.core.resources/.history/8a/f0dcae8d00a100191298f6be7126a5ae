@@ -1,0 +1,53 @@
+package assignment6;
+
+public class LabellingPairOfDices {
+
+	public static void main(String[] args) {
+		int colDie = 0, rowDie = 0;
+		String[][] matrix = new String[6][6];
+		int d = 0;
+		String[] phrases = {"Snake eyes", "Australian yo", "Little Joe From Kokomo", "No field five", "Easy six", "Six one your're done",
+		"Ace caught a deuce", "Ballerina", "The fever", "Jimmie Hicks", "Benny Blue", "Easy eight", "Easy four", "OJ", "Brooklyn Forest", "Big Red",
+		"Eighter from Decatur", "Nina from Pasadena", "Little Phoebe", "Easy six", "Skinny Mckinney", "Square pair", "Railroad nine", "Big one on the end",
+		"Sixie from Dixie", "Skinny Dugan", "Easy eight", "Jesse James", "Puppy paws", "Yo", "The Devil", "Easy eight", "Lou Brown", "Tennessee", "Six five no jive",
+		"Midnight"};
+		int sum = 0;
+		for(int i = 0; i<phrases.length; i++) {
+			if(phrases[i] != null) {
+				sum++;
+			}
+		}
+		System.out.println(sum);
+		
+		for(int u = 0; u < phrases.length; u++) {
+		for(int i = 0; i<matrix.length; i++) {
+			for(int j = 0; j<matrix[0].length; j++) {
+					matrix[i][j] = phrases[u];
+//					System.out.print(matrix[i][j] + " ");
+					break;
+			}// End of for loop 3
+//			System.out.println("");			
+			break;
+		}// End of for loop 2
+		}// End of for loop 1
+		
+		
+		for(int x = 0; x <matrix.length + 1; x++) {
+			if(x == 0) {
+				System.out.println("       Die 1     Die 2     Die 3     Die 4     Die 5");
+			}
+			for(int y = 0; y <matrix[0].length; y++) {
+				
+				if(y == 0) {
+					d++;
+					System.out.printf("Die %d ", d);
+				}
+				
+				System.out.print("  " + matrix[x][y] + "      ");
+				
+			}
+			System.out.print("\n\n");
+		}
+	}
+
+}

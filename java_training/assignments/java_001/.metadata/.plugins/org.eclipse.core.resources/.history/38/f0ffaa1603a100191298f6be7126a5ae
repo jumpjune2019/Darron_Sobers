@@ -1,0 +1,33 @@
+package assignment6;
+
+public class LabellingPairOfDices {
+
+	public static void main(String[] args) {
+		int colDie = 0, rowDie = 0;
+		
+		int d = 0;
+		String[][] matrix = {{"Snake eyes", "Australian yo", "Little Joe From Kokomo", "No field five", "Easy six", "Six one your're done"},
+				{"Ace caught a deuce", "Ballerina", "The fever", "Jimmie Hicks", "Benny Blue", "Easy eight"}, {"Easy four", "OJ", "Brooklyn Forest", "Big Red",
+		"Eighter from Decatur", "Nina from Pasadena"},{ "Little Phoebe", "Easy six", "Skinny Mckinney", "Square pair", "Railroad nine", "Big one on the end"},
+				{"Sixie from Dixie", "Skinny Dugan", "Easy eight", "Jesse James", "Puppy paws", "Yo"}, {"The Devil", "Easy eight", "Lou Brown", "Tennessee", "Six five no jive",
+		"Midnight"}};
+		
+		for(int x = 0; x <matrix.length; x++) {
+			if(x == 0) {
+				System.out.println("        Die 1                Die 2     Die 3     Die 4     Die 5     Die 6");
+			}
+			for(int y = 0; y <matrix[0].length; y++) {
+				
+				if(y == 0) {
+					d++;
+					System.out.printf("Die %d ", d);
+				}
+				
+				System.out.print("  " + matrix[x][y] + "      ");
+				
+			}
+			System.out.print("\n\n");
+		}
+	}
+
+}

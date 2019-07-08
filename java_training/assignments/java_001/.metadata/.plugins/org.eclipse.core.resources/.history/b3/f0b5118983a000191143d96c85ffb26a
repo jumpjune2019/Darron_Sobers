@@ -1,0 +1,12 @@
+package assignment6;
+
+public class LabellingPairOfDices {
+
+	public static void main(String[] args) {
+		int colDie = 0, rowDie = 0;
+		
+		
+
+	}
+
+}

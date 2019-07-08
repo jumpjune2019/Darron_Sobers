@@ -1,0 +1,11 @@
+INDEX VERSION 1.131+C:\Projects\springbootprojects\java_assignments\assignments\java_001\.metadata\.plugins\org.eclipse.jdt.core
+3388755966.index
+3699836446.index
+1645852497.index
+1136246621.index
+4274942457.index
+2645044236.index
+866621743.index
+117774581.index
+3513299629.index
+1562618661.index

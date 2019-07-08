@@ -1,0 +1,29 @@
+package assignment8;
+
+public class StringArrayUtilities {
+	boolean found;
+	
+	static boolean arrayHasExactMatch(String[] arr, String str, boolean bin) {
+		if (bin == true) {
+			str.toLowerCase();
+		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			if (bin == true) {
+				if (str.equals(arr[0].toLowerCase())) {
+					return true;
+				}
+			}
+			if (str.equals(arr[0])) {
+				return true;
+			}
+		}
+		return false;
+	}
+	public static void main(String[] args) {
+		String[] myList = {"Bozo", "FooBar", "Delta", "Foozball", "Demo", "Money", "Zoo"};
+		System.out.println(arrayHasExactMatch(myList, "Zoo", true));
+		
+	}
+
+}

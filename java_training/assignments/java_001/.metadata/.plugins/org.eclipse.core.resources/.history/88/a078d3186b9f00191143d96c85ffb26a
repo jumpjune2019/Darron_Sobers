@@ -1,0 +1,23 @@
+package assignment1;
+
+public class HeadOrTail {
+	
+	static int flip() {
+		int headOrTail = (int) (Math.random()*2) + 1;
+		return headOrTail;
+	}
+	
+	static String side(int c) {
+		if(c == 1) {
+			return "Head";
+		} else {
+			return "Tail";
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println("Coin Flip Program");
+		System.out.println(coinSide(headOrTail));
+		}
+}

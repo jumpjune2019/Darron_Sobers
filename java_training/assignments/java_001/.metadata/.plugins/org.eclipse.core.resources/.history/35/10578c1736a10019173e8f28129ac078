@@ -1,0 +1,61 @@
+package assignment8;
+
+public class StringArrayUtilities {
+	boolean found;
+	
+	static boolean arrayHasExactMatch(String[] arr, String str, boolean bin) {
+		if (bin == false) {
+			str.toLowerCase();
+		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			if (bin == false) {
+				if (str.equals(arr[i].toLowerCase())) {
+					return true;
+				}
+			}
+			if (str.equals(arr[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	static int indexOfOccuranceInArray(String[] arr, String str, boolean bin) {
+		int occurances = 0;
+		int[] foundIndexes = new int[1];
+		if (bin == false) {
+			str.toLowerCase();
+		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			if (bin == false) {
+				if (str.equals(arr[i].toLowerCase())) {
+					foundIndexes[0]++;
+					occurances++;
+				}
+			}
+			if (str.equals(arr[i])) {
+				foundIndexes[0]++;
+				occurances++;
+			}
+			
+		}
+		if(occurances == 0) {
+			return -1;
+		}
+		
+		return foundIndexes[0];
+	}
+	
+	
+	public static void main(String[] args) {
+		String[] myList = {"Bozo", "FooBar", "Delta", "Foozball", "Demo", "Money", "Zoo", "Zoo"};
+		System.out.println("This is the a test of the arrayHasExactMatch and indexOfOccurenceInArray methods");
+		System.out.println("The array to test contains the following items");
+		System.out.print("{\"Bozo\", \"FooBar\", \"Delta\", \"Foozball\", \"Demo\", \"Money\", \"Zoo\", \"Zoo\"}");
+		System.out.println("Scenario 1\n" + indexOfOccuranceInArray(myList, "zoo", false));
+		
+	}
+
+}

@@ -1,0 +1,44 @@
+package assignment3;
+
+import java.util.Scanner;
+
+public class ThrowADie {
+
+	public static void main(String[] args) {
+		// created a Scanner object to be able to accept input
+		Scanner sc = new Scanner(System.in);
+		// created a boolean variable and set it equal to true
+		boolean play = true;
+		// created a null String variable named quit
+		String quit = null;
+		// created a null String variable named playAgain
+		String playAgain = null;
+		// created a null integer variable named roll
+		int roll = 0;
+		
+		// while play is true the loop will continue iteration
+		while(play) {
+			System.out.println("Press any key to throw a die and press Enter (or Q and Enter to quit)");
+			// quit is assigned to the users input
+			quit = sc.next();
+			// 
+			quit.toUpperCase();
+			if(quit.charAt(0) == 'Q'|| quit.equals("quit")) {
+				play = false;
+			} else {
+				roll = (int) (Math.random() *6) + 1;
+				System.out.printf("You have rolled a %d\n", roll);
+				System.out.println("Play Again? (Y or y) and Enter, any other key and Enter to Quit");
+				playAgain = sc.next();
+				if(playAgain.charAt(0) == 'y' || playAgain.charAt(0) == 'Y') {
+					play = true;
+				} else {
+					play = false;
+				}
+			}
+			
+		}
+		
+	}
+
+}

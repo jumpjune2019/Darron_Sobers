@@ -1,0 +1,97 @@
+package assignment7;
+import java.util.Scanner;
+
+public class GamOfDice {
+
+	public static void main(String[] args) {
+		String[][] matrix = {{"Snake eyes", "Australian yo", "Little Joe From Kokomo", "No field five", "Easy six", "Six one your're done"},
+				{"Ace caught a deuce", "Ballerina", "The fever", "Jimmie Hicks", "Benny Blue", "Easy eight"}, {"Easy four", "OJ", "Brooklyn Forest", "Big Red",
+		"Eighter from Decatur", "Nina from Pasadena"},{ "Little Phoebe", "Easy six", "Skinny Mckinney", "Square pair", "Railroad nine", "Big one on the end"},
+				{"Sixie from Dixie", "Skinny Dugan", "Easy eight", "Jesse James", "Puppy paws", "Yo"}, {"The Devil", "Easy eight", "Lou Brown", "Tennessee", "Six five no jive",
+		"Midnight"}};
+		// created a Scanner object to be able to accept input
+		Scanner sc = new Scanner(System.in);
+		// created a boolean variable and set it equal to true
+		boolean play = true;
+		// created a null String variable named quit
+		String quit = null;
+		// created a null String variable named playAgain
+		String playAgain = null;
+		// created a null integer variable named die1 and die2
+		int die1 = 0;
+		int die2 = 0;
+		int cDie1 = 0;
+		int cDie2 = 0;
+		int sumMe = 0;
+		int sumC = 0;
+		int playTimes = 0;
+		System.out.println("Welcome to the dice throw challenge!\nDo you feel lucky? \"Punk\"... Do ya?");
+		// while play is true the loop will continue iteration
+		while(play) {
+			
+			switch(playTimes) {
+			case 0:
+				System.out.println("Press any key and ENTER to throw your dice or press (Q or q) to chicken your butt off…");
+				break;
+			case 1:
+				System.out.println("Wanna try again? Press any key and press Enter (or Q and Enter to quit)");
+				break;
+			case 2:
+				break;
+			}
+			
+			// quit is assigned to the users input
+			quit = sc.next();
+			// change the string value to all uppercase
+			quit.toUpperCase();
+			// the if statement checks if the first character is a capital 'Q' or the string assigned to
+			// the word "quit"
+			if(quit.charAt(0) == 'Q'|| quit.charAt(0) == 'q') {
+				if(playTimes == 0) {
+					System.out.println("See ya later alligator!");
+				} else if (playTimes == 1) {
+					System.out.println("Thanks for being a sport! laters!");
+				}
+				// assigns play the value of false to end loop
+				play = false;
+			} else {
+				System.out.println("Rolling the dice!!");
+				playTimes++;
+				// assigns a random number to roll between 1 and 6
+				die1 = (int) (Math.random() *6) + 1;
+				die2 = (int) (Math.random() *6) + 1;
+				cDie1 = (int) (Math.random() *6) + 1;
+				cDie2 = (int) (Math.random() *6) + 1;
+				// prints the random number selected to the console in a statement
+				System.out.printf("You have rolled a %d and %d > the " + matrix[die1][die2], die1,die2);
+				System.out.printf("I have rolled a %d and %d > the " + matrix[cDie1][cDie2], cDie1,cDie2);
+				sumMe= die1 + die2;
+				sumC = cDie1 + cDie2;
+				if(sumMe > sumC) {
+					System.out.println("You Win!!!");
+					System.out.println("Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw you dice or press (Q or q) to quit");
+				} else if (sumMe == sumC && die1 == die2) {
+					System.out.println("Damn! You win on a Double! What Luck");
+					System.out.println("Did you cheat?? Gimme another try, c’mon Press any key and ENTER to throw you dice or press (Q or q) to quit");
+				} else if (sumMe == sumC && cDie1 == cDie2) {
+					System.out.println("Damn! I win on a Double! I pity you fool!");
+					System.out.println("Wanna try again? Press any key and ENTER to throw your dice or press (Q or q) to quit");
+				} else if (sumMe == sumC) {
+					System.out.println("Stalemate! You're tough, let's try for a tie-breaker Press any key and ENTER to throw you dice or press (Q or q) to quit");
+				}
+				// assigns playAgain to the user input
+				playAgain = sc.next();
+				// the if statement checks if the first character is a capital or lowercase 'y'
+				if(playAgain.charAt(0) == 'Q' || playAgain.charAt(0) == 'q') {
+					// assigns play the value of false to end loop
+					play = true;
+				} else {
+					// assigns play the value of false to end loop
+					play = false;
+				}// End of else
+			}// End of else
+		}// End of while
+
+	}
+
+}

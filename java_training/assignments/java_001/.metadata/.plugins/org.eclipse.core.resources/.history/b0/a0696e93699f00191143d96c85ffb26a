@@ -1,0 +1,23 @@
+package assignment1;
+
+public class HeadOrTail {
+	
+	static String coinSide(int c) {
+		if(c == 1) {
+			return "Heads";
+		} return "Tails";
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int headOrTail = (int) (Math.random()*2) + 1;
+		coinSide(headOrTail);
+		
+		System.out.println(headOrTail);
+		
+		
+
+	}
+
+}

@@ -1,0 +1,52 @@
+package assignment8;
+
+public class StringArrayUtilities {
+	boolean found;
+	
+	static boolean arrayHasExactMatch(String[] arr, String str, boolean bin) {
+		if (bin == false) {
+			str.toLowerCase();
+		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			if (bin == false) {
+				if (str.equals(arr[i].toLowerCase())) {
+					return true;
+				}
+			}
+			if (str.equals(arr[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	static int[] indexOfOccuranceInArray(String[] arr, String str, boolean bin) {
+		int[] foundIndexes = new int[1];
+		if (bin == false) {
+			str.toLowerCase();
+		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			if (bin == false) {
+				if (str.equals(arr[i].toLowerCase())) {
+					foundIndexes[0]++;
+				}
+			}
+			if (str.equals(arr[i])) {
+				foundIndexes[0]++;
+			}
+		}
+		
+		
+		return foundIndexes[0];
+	}
+	
+	
+	public static void main(String[] args) {
+		String[] myList = {"Bozo", "FooBar", "Delta", "Foozball", "Demo", "Money", "Zoo"};
+		System.out.println(arrayHasExactMatch(myList, "zoo", false));
+		
+	}
+
+}

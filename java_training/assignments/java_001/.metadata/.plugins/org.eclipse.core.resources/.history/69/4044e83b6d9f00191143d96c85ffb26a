@@ -1,0 +1,22 @@
+package assignment2;
+
+public class KeepingStats {
+
+	public static void main(String[] args) {
+		int[] tally = {0, 0};
+		int countH; tally[0];
+		int countT = tally[1];
+		
+		for(int i = 0; i < 1000; i++) {
+			
+			if () {
+				countH++;
+			} else {
+				countT++;
+			}
+			
+		}
+
+	}
+
+}

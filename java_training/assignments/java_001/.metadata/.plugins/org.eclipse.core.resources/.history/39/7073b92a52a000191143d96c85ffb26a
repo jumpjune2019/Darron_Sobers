@@ -1,0 +1,58 @@
+package assignment5;
+
+public class KeepingWayMoreStats {
+	
+	static String timeOrOccrance(int a) {
+		if(a <1) {
+			return "occurance";
+		} else {
+			return "times";
+		}
+	}
+
+	public static void main(String[] args) {
+		int i;
+		int die1, die2;
+		int occurence;
+		int[] arr = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		int diePair11 = arr[0]; /*diePair16, diePair21, diePair22, diePair31, diePair32,
+		diePair33, diePair34, diePair41, diePair42, diePair44, diePair45, diePair46,
+		diePair51, diePair52, diePair53, diePair55, diePair56, diePair62, diePair63,
+		diePair64, diePair66;*/
+		
+		
+		for(i = 0; i <= 10000; i++) {
+			die1 = (int) (Math.random() * 6) + 1;
+			die2 = (int) (Math.random() * 6) + 1;
+			if(die1 == 2 || die2 == 4) {
+				arr[0]++;
+			}
+			System.out.println("Dice 1: "+ die1);
+			System.out.println("Dice 2: "+ die2);
+		}
+		System.out.println("Dice 1 and 1: " + arr[0] + " " + timeOrOccrance(diePair11));
+		/*System.out.println("Dice 1 and 6:");
+		System.out.println("Dice 2 and 1:");
+		System.out.println("Dice 2 and 2:");
+		System.out.println("Dice 3 and 1:");
+		System.out.println("Dice 3 and 2:");
+		System.out.println("Dice 3 and 3:");
+		System.out.println("Dice 3 and 4:");
+		System.out.println("Dice 4 and 1:");
+		System.out.println("Dice 4 and 2:");
+		System.out.println("Dice 4 and 4:");
+		System.out.println("Dice 4 and 5:");
+		System.out.println("Dice 4 and 6:");
+		System.out.println("Dice 5 and 1:");
+		System.out.println("Dice 5 and 2:");
+		System.out.println("Dice 5 and 3:");
+		System.out.println("Dice 5 and 5:");
+		System.out.println("Dice 5 and 6:");
+		System.out.println("Dice 6 and 2:");
+		System.out.println("Dice 6 and 3:");
+		System.out.println("Dice 6 and 4:");
+		System.out.println("Dice 6 and 6:");*/
+
+	}
+
+}

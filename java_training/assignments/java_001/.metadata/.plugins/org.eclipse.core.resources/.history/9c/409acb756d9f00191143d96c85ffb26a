@@ -1,0 +1,29 @@
+package assignment2;
+
+public class KeepingStats {
+	
+	static int flip() {
+		// randomly selects either 1 or 2 when called
+		int headOrTail = (int) (Math.random()*2) + 1;
+		// returns the random number
+		return headOrTail;
+	}// End of flip
+	
+	public static void main(String[] args) {
+		int[] tally = {0, 0};
+		int countH = tally[0];
+		int countT = tally[1];
+		
+		for(int i = 0; i < 1000; i++) {
+			
+			if () {
+				countH++;
+			} else {
+				countT++;
+			}
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package assignment3;
+
+import java.util.Scanner;
+import java.io.*;
+
+public class ThrowADie {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		for(;;) {
+			try {
+				int data = System.in.read();
+				if(data == 27) {
+					break;
+				}
+				System.out.print(data);
+			} catch(IOException e) {
+				
+			}
+		}
+	}
+
+}

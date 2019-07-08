@@ -1,0 +1,37 @@
+package assignment2;
+
+public class KeepingStats {
+	
+	static int flip() {
+		// randomly selects either 1 or 2 when called
+		int headOrTail = (int) (Math.random()*2) + 1;
+		// returns the random number
+		return headOrTail;
+	}// End of flip
+	
+	public static void main(String[] args) {
+		int[] tally = {0, 0};
+		int countH = tally[0];
+		int countT = tally[1];
+		int i;
+		
+		for(i = 0; i < 1000; i++) {
+			System.out.println("I am number " + i);
+			if (flip() == 1) {
+				System.out.println(flip());
+				countH++;
+			} else {
+				System.out.println(flip());
+				countT++;
+			}
+			
+		}
+		
+		System.out.printf("%d Coin Flips\n", i);
+		System.out.printf("Count of Head: %d", countH);
+		System.out.printf("Count of Tail: %d", countT);
+		
+
+	}
+
+}

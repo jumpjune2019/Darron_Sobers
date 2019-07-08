@@ -1,0 +1,27 @@
+package assignment3;
+
+import java.util.Scanner;
+
+public class ThrowADie {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		boolean play = true;
+		String quit;
+		char quiter = 0;
+		int roll = (int) (Math.random() *6) + 1;
+		
+		while(play) {
+			System.out.println("Press any key to throw a die and press Enter (or Q and Enter to quit)");
+			quit = sc.next();
+			if(quit == 'Q'|| quit.equals("quit")) {
+				play = false;
+			} else {
+				System.out.printf("You have rolled a %d\n", roll);
+			}
+			
+		}
+		
+	}
+
+}
