@@ -9,11 +9,13 @@ public class HeadOrTailMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		boolean keepOn = true;
+		// lambda expression in a block of code
 		Flipper pickSide = () -> {
 			int side = (int) (Math.random()*2) + 1;
 			return side;
 		};
 		
+		// lambda expression in a block of code
 		HeadOrTails select = (p) -> {
 			if(p == 1) {
 				return "Head";
