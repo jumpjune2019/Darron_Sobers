@@ -20,9 +20,6 @@ public class Main {
 		for(LabelsEnum le : LabelsEnum.values()) {
 			tempLabel = new MyLabel();
 			myLabels[count] = tempLabel.setLabel(le.getLabel(), le.getPosition(), frm);
-			// checking to see if label and position values were extrapolated
-//			System.out.println("This is the label: " + le.getLabel());
-//			System.out.println("This is the position: " + le.getPosition());
 			count++;
 		}
 	}

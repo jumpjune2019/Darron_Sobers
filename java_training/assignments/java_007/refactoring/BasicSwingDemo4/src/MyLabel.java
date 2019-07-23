@@ -14,6 +14,9 @@ public class MyLabel {
 	}
 	
 	void setLabelInLayout(JFrame jF, JLabel jl) {
+		// aligns all JLabels to be in centered horizontally and vertically
+		jl.setHorizontalAlignment(JLabel.CENTER);
+		jl.setVerticalAlignment(JLabel.CENTER);
 		jF.add(jl, position);
 	}
 }
