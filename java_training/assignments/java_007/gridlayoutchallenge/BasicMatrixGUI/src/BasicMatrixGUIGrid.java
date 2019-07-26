@@ -21,7 +21,7 @@ public class BasicMatrixGUIGrid {
 	JLabel header;
 	JLabel footer;
 	JPanel controlPanel;
-	JPanel panel;
+	JPanel gridPanel;
 
 	int row = randomIndex();
 	int col = randomIndex();
@@ -33,7 +33,8 @@ public class BasicMatrixGUIGrid {
 	private void prepGUI() {
 		// create JFrame and its title
 		matrixFrame = new JFrame("Basic Matrix Demo");
-		matrixFrame.setSize(new Dimension((col*50), (row*50) + 80));
+		// dimensions parameters are width times length therefore, columns by rows
+		matrixFrame.setSize(new Dimension((col*50)+80, (row*50)+60));
 		matrixFrame.setLayout(new BorderLayout());
 		header = new JLabel("Basic Matrix Demo", JLabel.CENTER);
 		footer = new JLabel("No seat selected", JLabel.CENTER);
@@ -50,9 +51,8 @@ public class BasicMatrixGUIGrid {
 	
 	public void showGridLayout() throws NullPointerException {
 		// creates JPanel for Grid Layout
-		panel = new JPanel();
-		panel.setSize(new Dimension(row*50 , col*50));
-		panel.setBackground(Color.RED);
+		gridPanel = new JPanel();
+		gridPanel.setSize(new Dimension(col*50, row*50 ));
 		GridLayout layout = new GridLayout(row,col);
 		
 		// created initial row letter
@@ -60,18 +60,18 @@ public class BasicMatrixGUIGrid {
 		char alphaTemp = alpha;
 		// resets after each row is completed
 		int iExtra = 0;
-		// nested for loop appends cells to panel
+		// nested for loop appends cells to gridPanel
 		for(int r = 0; r < row; r++) {
 			for(int c = 0; c < col; c++) {
 				// adds the cells to the Grid of the JPanel
-				panel.add(addCellToGrid(alphaTemp, iExtra));
+				gridPanel.add(addCellToGrid(alphaTemp, iExtra));
 				iExtra++;
 			}
 			alphaTemp++;
 			iExtra = 0;
 		}
-		panel.setLayout(layout);
-		controlPanel.add(panel);
+		gridPanel.setLayout(layout);
+		controlPanel.add(gridPanel);
 	}
 
 	// returns a random number between 2 and 5
@@ -89,18 +89,23 @@ public class BasicMatrixGUIGrid {
 			footer.setText(ae.getActionCommand());
 		});
 		String label = (a + " - " +  (i + 1)).toString();
-
+		JPanel topLabel = new JPanel();
+		topLabel.setLayout(new BorderLayout());
+		JPanel bottomLabel = new JPanel();
+		bottomLabel.setLayout(new BorderLayout());
 		JLabel cellLabel = new JLabel(label, JLabel.CENTER);
+		topLabel.add(cellLabel);
+		bottomLabel.add(jBtn);
 		JPanel cell = new JPanel();
 		// sets the cells to host a Box Layout
 		cell.setLayout(new BoxLayout(cell, BoxLayout.Y_AXIS));
 		// set the size of the cell
 		cell.setSize(new Dimension(50, 50));
-		cell.setBackground(Color.GREEN);
+//		cell.setBackground(Color.GREEN);
 		// adds a label to the cell
-		cell.add(cellLabel);
+		cell.add(topLabel, BorderLayout.NORTH);
 		// adds a button
-		cell.add(jBtn);
+		cell.add(bottomLabel, BorderLayout.SOUTH);
 		return cell;
 	}
 	
