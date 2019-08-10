@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 import javax.swing.JToggleButton;
 
@@ -34,14 +35,16 @@ public class Room {
 	}
 	
 	// Resets the roomDB matrix with Seat objects
-		public void resetMatrix(Seat[][] arr, Client c, Room rm) {
+		public void resetMatrix(Seat[][] arr, Client c, Room rm, ArrayList a) {
 			for(int i = 0; i < arr.length; i++) {
 				for(int x = 0; x < arr[i].length; x++) {
 					int ij = arr[i][x].getMySeatX();
 					int ij2 = arr[i][x].getMySeatY();
-					
-//					arr[i][x].;
+					Main.newBookBtn[i][x].setSelected(false);
+					Main.newBookBtn[i][x].setText(" Book ");
+					Main.availability[i][x].setText("Vacant");
 					arr[i][x] = new Seat(c);
+					Main.seated.removeAll(a);
 				}
 			}
 			
@@ -120,18 +123,25 @@ public class Room {
 			break;
 		case 3:
 			seatRow = "D-";
+			break;
 		case 4:
 			seatRow = "E-";
+			break;
 		case 5:
 			seatRow = "F-";
+			break;
 		case 6:
 			seatRow = "G-";
+			break;
 		case 7:
 			seatRow = "H-";
+			break;
 		case 8:
 			seatRow = "I-";
+			break;
 		case 9:
 			seatRow = "J-";
+			break;
 		}
 		return seatRow + seatCol;
 	}
